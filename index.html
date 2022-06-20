@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- https://heroicons.com/
+            ^^ Use this to find tailwind icons -->
+
+    <title>Trip Planner</title>
+  </head>
+
+  <body class="bg-gray-100 h-full">
+    <header class="p-5 flex flex-col sticky top-0 bg-indigo-600">
+      <h6 class="text-slate-50 text-center text-5xl p-10">
+        <a href="/">Trip Planner</a>
+      </h6>
+      <nav class="flex justify-around">
+        <form id="nav-form" class="flex justify-between">
+          <div class="location px-2">
+            <label for="location" class="text-slate-50 text-xl"
+              >Where are you going:</label
+            >
+            <input
+              type="search"
+              id="locationSearch"
+              name="location"
+              class="rounded-full px-3"
+              placeholder="City, State"
+              required
+            />
+          </div>
+          <div class="date px-2 pr-5">
+            <label for="date" class="text-slate-50 text-xl">Date:</label>
+            <input
+              type="date"
+              id="dateSearch"
+              name="date"
+              class="rounded-full px-3 text-slate-500"
+              required
+            />
+          </div>
+          <button
+            id="findEventBtn"
+            class="px-3 bg-slate-50 hover:bg-sky-500 focus:ring rounded-md"
+            type="submit"
+          >
+            Find Events
+          </button>
+        </form>
+        <div class="about text-white">
+          <a href="#about" class="px-2 hover:text-black">About</a>
+          <a href="" class="px-2 hover:text-black">GitHub</a>
+        </div>
+      </nav>
+    </header>
+
+    <main
+      class="max-w-7xl bg-gray-300 m-auto h-full flex flex-col"
+      id="main-content"
+    >
+      <h1
+        class="text-3xl font-bold flex justify-center pt-6"
+        id="location-label"
+      ></h1>
+      <article class="day-events flex-1">
+        <!-- dynamically generated section -->
+        <!-- <section class="day flex justify-center bg-gray-200 m-8 p-5">
+               <div class="weather bg-gray-300 p-5">
+                  <h2 class="event-date pb-2 font-bold">Thu Jan 1, 1970</h2>
+                  <div class="weather-main">
+                     <img class="weather-main-icon" src="">
+                     <h4 class="weather-main-text">Clear</h4>
+                  </div>
+                  <div class="weather-temp">
+                     <h5 class="weather-high">High: 34</h5>
+                     <h5 class="weather-low">Low: 10</h5>
+                  </div>
+               </div>
+       
+               <div class="events bg-slate-50 p-5">
+                  <div class="event">
+                     <img class="event-thumbnail" src="">
+                     <p class="event-title">Test Debug in Concert</p>
+                     <p class="event-time-and-venue">
+                        <span class="event-time">3:00pm</span>
+                        <span class="event-venue">Big Concert Hall</span>
+                     </p>
+                     <p class="event-description">Test Debug lorem ipsum tour</p>
+                  </div>
+                  <div class="event">
+                     <img class="event-thumbnail" src="">
+                     <p class="event-title">Test Debug 2 in Concert</p>
+                     <p class="event-time-and-venue">
+                        <span class="event-time">9:00pm</span>
+                        <span class="event-venue">Music Place Center</span>
+                     </p>
+                     <p class="event-description">Test Debug lorem ipsum tour 2</p>
+                  </div>
+               </div>
+            </section> -->
+      </article>
+    </main>
+    <section
+      class="text-gray-600 body-font bg-gradient-to-t from-blue-600 w-full"
+    >
+      <div class="container px-5 py-5 mx-auto">
+        <div class="flex flex-col text-center w-full mb-20">
+          <h1
+            class="sm:text-4xl text-2xl font-medium title-font mb-4 text-gray-900"
+          >
+            Team members
+          </h1>
+          <p class="lg:w-2/3 mx-auto leading-relaxed text-base font-medium">
+            The team members that develop the app.
+          </p>
+        </div>
+        <div class="flex flex-wrap -m-2">
+          <div class="p-1 lg:w-1/4 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border p-4 rounded-lg bg-gradient-to-t"
+            >
+              <div class="flex-grow text-center">
+                <h2 class="text-white title-font font-small">Abyou Geletu</h2>
+                <p class="text-white">Student</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="p-1 lg:w-1/4 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border p-4 rounded-lg bg-gradient-to-t"
+            >
+              <div class="flex-grow text-center">
+                <h2 class="text-white title-font font-medium">Luna Roberge</h2>
+                <p class="text-white">Student</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-1 lg:w-1/4 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border p-4 rounded-lg bg-gradient-to-t"
+            >
+              <div class="flex-grow text-center">
+                <h2 class="text-white title-font font-medium">Myra Ibarra</h2>
+                <p class="text-white">Student</p>
+              </div>
+            </div>
+          </div>
+          <div class="p-1 lg:w-1/4 md:w-1/2 w-full">
+            <div
+              class="h-full flex items-center border p-4 rounded-lg bg-gradient-to-t"
+            >
+              <div class="flex-grow text-center">
+                <h2 class="text-white title-font font-medium">Vue Lee</h2>
+                <p class="text-white">Student</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer
+      class="flex justify-center border-t-2 w-full bg-gray-900 sticky bottom-0"
+    >
+      <div
+        class="container px-5 py-8 mx-auto flex items-center sm:flex-row flex-col text-white"
+      >
+        <a
+          class="flex title-font font-medium items-center md:justify-start justify-center text-Slate-50"
+        >
+          <!-- Add logo -->
+          <span class="ml-3 text-xl">Trip Planner</span>
+        </a>
+        <p
+          class="text-sm text-Slate-50 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-white sm:py-2 sm:mt-0 mt-4 text-Slate-50"
+        >
+          © 2020 Trip Planner
+        </p>
+        <span
+          class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start"
+        >
+          <a class="text-Slate-50">
+            <svg
+              fill="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              class="w-5 h-5"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"
+              ></path>
+            </svg>
+          </a>
+          <a class="ml-3 text-Slate-50">
+            <svg
+              fill="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              class="w-5 h-5"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"
+              ></path>
+            </svg>
+          </a>
+          <a class="ml-3 text-Slate-50">
+            <svg
+              fill="none"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
+              class="w-5 h-5"
+              viewBox="0 0 24 24"
+            >
+              <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+              <path
+                d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"
+              ></path>
+            </svg>
+          </a>
+          <a class="ml-3 text-Slate-50">
+            <svg
+              fill="currentColor"
+              stroke="currentColor"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="0"
+              class="w-5 h-5"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="none"
+                d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"
+              ></path>
+              <circle cx="4" cy="4" r="2" stroke="none"></circle>
+            </svg>
+          </a>
+        </span>
+      </div>
+    </footer>
+
+    <script src="./assets/js/key.js"></script>
+    <script src="./assets/js/script.js"></script>
+  </body>
+</html>
